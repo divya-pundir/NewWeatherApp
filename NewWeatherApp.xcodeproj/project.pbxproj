@@ -10,10 +10,10 @@
 		5A6DB31125EE110700F7957E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6DB31025EE110700F7957E /* AppDelegate.swift */; };
 		5A6DB31325EE110700F7957E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6DB31225EE110700F7957E /* SceneDelegate.swift */; };
 		5A6DB31525EE110700F7957E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6DB31425EE110700F7957E /* ViewController.swift */; };
-		5A6DB31825EE110700F7957E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A6DB31625EE110700F7957E /* Main.storyboard */; };
 		5A6DB31A25EE110900F7957E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A6DB31925EE110900F7957E /* Assets.xcassets */; };
-		5A6DB31D25EE110900F7957E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A6DB31B25EE110900F7957E /* LaunchScreen.storyboard */; };
 		5A6DB32825EE110900F7957E /* NewWeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6DB32725EE110900F7957E /* NewWeatherAppTests.swift */; };
+		5A6DB33825EE13FC00F7957E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A6DB33725EE13FC00F7957E /* Main.storyboard */; };
+		5A6DB33A25EE141500F7957E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A6DB33925EE141500F7957E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +31,13 @@
 		5A6DB31025EE110700F7957E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A6DB31225EE110700F7957E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5A6DB31425EE110700F7957E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5A6DB31725EE110700F7957E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A6DB31925EE110900F7957E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5A6DB31C25EE110900F7957E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A6DB31E25EE110900F7957E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A6DB32325EE110900F7957E /* NewWeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewWeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A6DB32725EE110900F7957E /* NewWeatherAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWeatherAppTests.swift; sourceTree = "<group>"; };
 		5A6DB32925EE110900F7957E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A6DB33725EE13FC00F7957E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5A6DB33925EE141500F7957E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +79,12 @@
 		5A6DB30F25EE110700F7957E /* NewWeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				5A6DB31025EE110700F7957E /* AppDelegate.swift */,
+				5A6DB33625EE131200F7957E /* Storyboards */,
+				5A6DB33525EE12D600F7957E /* Supporting Files */,
+				5A6DB33425EE127F00F7957E /* Resources */,
+				5A6DB33325EE121B00F7957E /* ViewControllers */,
+				5A6DB33225EE111100F7957E /* Application Delegate */,
 				5A6DB31225EE110700F7957E /* SceneDelegate.swift */,
-				5A6DB31425EE110700F7957E /* ViewController.swift */,
-				5A6DB31625EE110700F7957E /* Main.storyboard */,
-				5A6DB31925EE110900F7957E /* Assets.xcassets */,
-				5A6DB31B25EE110900F7957E /* LaunchScreen.storyboard */,
-				5A6DB31E25EE110900F7957E /* Info.plist */,
 			);
 			path = NewWeatherApp;
 			sourceTree = "<group>";
@@ -97,6 +96,47 @@
 				5A6DB32925EE110900F7957E /* Info.plist */,
 			);
 			path = NewWeatherAppTests;
+			sourceTree = "<group>";
+		};
+		5A6DB33225EE111100F7957E /* Application Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				5A6DB31025EE110700F7957E /* AppDelegate.swift */,
+			);
+			path = "Application Delegate";
+			sourceTree = "<group>";
+		};
+		5A6DB33325EE121B00F7957E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5A6DB31425EE110700F7957E /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5A6DB33425EE127F00F7957E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5A6DB31925EE110900F7957E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5A6DB33525EE12D600F7957E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A6DB31E25EE110900F7957E /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5A6DB33625EE131200F7957E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5A6DB33725EE13FC00F7957E /* Main.storyboard */,
+				5A6DB33925EE141500F7957E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,9 +220,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A6DB31D25EE110900F7957E /* LaunchScreen.storyboard in Resources */,
+				5A6DB33A25EE141500F7957E /* LaunchScreen.storyboard in Resources */,
 				5A6DB31A25EE110900F7957E /* Assets.xcassets in Resources */,
-				5A6DB31825EE110700F7957E /* Main.storyboard in Resources */,
+				5A6DB33825EE13FC00F7957E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,25 +263,6 @@
 			targetProxy = 5A6DB32425EE110900F7957E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		5A6DB31625EE110700F7957E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5A6DB31725EE110700F7957E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5A6DB31B25EE110900F7957E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5A6DB31C25EE110900F7957E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5A6DB32A25EE110900F7957E /* Debug */ = {
@@ -363,7 +384,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NewWeatherApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NewWeatherApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +401,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NewWeatherApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NewWeatherApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
