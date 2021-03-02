@@ -8,10 +8,19 @@
 
 import UIKit
 
-class CitiNameViewController : ViewController, UITableViewDataSource, UITableViewDelegate {
+class CitiNameViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let cities : [String] = ["Delhi", "Goa"]
+    var selectedCity : String?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NetworkManager.shared.weatherDataForLocation(cityName: "Delhi") { (response, error) in
+            print(response)
+        }
+    }
+    
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cities.count
     }
@@ -25,7 +34,13 @@ class CitiNameViewController : ViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //get citi details
-        
+        selectedCity = cities[indexPath.row]
+        performSegue(withIdentifier: "weatherDetails", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailViewController = segue.destination as? WeatherDetailViewController, let city = selectedCity {
+            detailViewController.selectedCity = city
+        }
     }
 }

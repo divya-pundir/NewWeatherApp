@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WeatherDetailViewController.swift
 //  NewWeatherApp
 //
 //  Created by Divya Pundir on 3/2/21.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class WeatherDetailViewController : UIViewController {
+    
+    var selectedCity : String?
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
+    
 }
-
