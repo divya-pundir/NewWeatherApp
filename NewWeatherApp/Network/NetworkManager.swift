@@ -17,7 +17,7 @@ enum DataManagerError: Error {
 class NetworkManager {
     
     fileprivate let apiKey = "7a9778c40068c1eec02be84eeea3f57d"
-    typealias WeatherDataCompletion = (AnyObject?, DataManagerError?) -> ()
+    typealias WeatherDataCompletion = (WeatherData?, DataManagerError?) -> ()
     static let shared = NetworkManager()
     
     func getURL(_ cityName : String) -> URL? {
@@ -46,8 +46,15 @@ class NetworkManager {
     }
     
     private func processWeatherData(data: Data, completion: WeatherDataCompletion) {
-        if let JSON = try? JSONSerialization.jsonObject(with: data, options: []) as AnyObject {
-            completion(JSON, nil)
+//        if let JSON = try? JSONSerialization.jsonObject(with: data, options: []) as AnyObject {
+//            completion(JSON, nil)
+//        } else {
+//            completion(nil, .InvalidResponse)
+//        }
+        
+        
+        if let weatherData = try? JSONDecoder().decode(WeatherData.self, from: data) {
+            completion(weatherData, nil)
         } else {
             completion(nil, .InvalidResponse)
         }

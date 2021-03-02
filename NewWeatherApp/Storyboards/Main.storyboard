@@ -105,6 +105,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addCity:" destination="pPz-Kc-9Fx" eventType="touchUpInside" id="Cbq-cK-JjM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -121,7 +124,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="DIl-cS-hqH"/>
                     <connections>
-                        <outlet property="addCity" destination="DWk-h8-6HG" id="E0n-T4-hjJ"/>
+                        <outlet property="cityTextField" destination="5v9-Cy-5dw" id="ALX-Y3-YMU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVN-uy-xGE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
