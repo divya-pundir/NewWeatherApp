@@ -14,6 +14,8 @@
 		5A6DB32825EE110900F7957E /* NewWeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6DB32725EE110900F7957E /* NewWeatherAppTests.swift */; };
 		5A6DB33825EE13FC00F7957E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A6DB33725EE13FC00F7957E /* Main.storyboard */; };
 		5A6DB33A25EE141500F7957E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A6DB33925EE141500F7957E /* LaunchScreen.storyboard */; };
+		5A6DB33D25EE200200F7957E /* CitiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6DB33C25EE200200F7957E /* CitiTableViewCell.swift */; };
+		5A6DB33F25EE20AC00F7957E /* CitiNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6DB33E25EE20AC00F7957E /* CitiNameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		5A6DB32925EE110900F7957E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A6DB33725EE13FC00F7957E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5A6DB33925EE141500F7957E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5A6DB33C25EE200200F7957E /* CitiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiTableViewCell.swift; sourceTree = "<group>"; };
+		5A6DB33E25EE20AC00F7957E /* CitiNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiNameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		5A6DB30F25EE110700F7957E /* NewWeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				5A6DB33B25EE1FBA00F7957E /* Views */,
 				5A6DB33625EE131200F7957E /* Storyboards */,
 				5A6DB33525EE12D600F7957E /* Supporting Files */,
 				5A6DB33425EE127F00F7957E /* Resources */,
@@ -110,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				5A6DB31425EE110700F7957E /* ViewController.swift */,
+				5A6DB33E25EE20AC00F7957E /* CitiNameViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -137,6 +143,14 @@
 				5A6DB33925EE141500F7957E /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5A6DB33B25EE1FBA00F7957E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A6DB33C25EE200200F7957E /* CitiTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +256,8 @@
 			files = (
 				5A6DB31525EE110700F7957E /* ViewController.swift in Sources */,
 				5A6DB31125EE110700F7957E /* AppDelegate.swift in Sources */,
+				5A6DB33D25EE200200F7957E /* CitiTableViewCell.swift in Sources */,
+				5A6DB33F25EE20AC00F7957E /* CitiNameViewController.swift in Sources */,
 				5A6DB31325EE110700F7957E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
