@@ -20,6 +20,7 @@ class CitiNameViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Select a City"
         citiNameTblView.delegate = self
         citiNameTblView.dataSource = self
     }
@@ -28,6 +29,7 @@ class CitiNameViewController : UIViewController {
         super.viewWillAppear(animated)
         DataRepository.shared.delegate = self
         DataRepository.shared.fetchDataFromDb()
+        self.citiNameTblView.reloadData()
     }
     
    
@@ -84,12 +86,14 @@ extension CitiNameViewController: DataRepositoryDelegate {
 
                         dispatchGroup.notify(queue: .main) {
                             self.citiesList = weatherDataList
+                            self.citiNameTblView.reloadData()
                         }
                     }
                 }
             }
 
         }
-        self.citiNameTblView.reloadData()
+        
+      
     }
 }

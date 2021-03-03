@@ -24,5 +24,6 @@ struct Main : Codable {
 		temp_min = try values.decodeIfPresent(Double.self, forKey: .temp_min)
 		temp_max = try values.decodeIfPresent(Double.self, forKey: .temp_max)
 	}
-
+    
+    
 }

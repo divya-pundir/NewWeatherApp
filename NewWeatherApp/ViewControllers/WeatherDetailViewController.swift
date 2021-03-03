@@ -33,6 +33,11 @@ extension WeatherDetailViewController : UITableViewDelegate, UITableViewDataSour
         }
         cell.titleLabel.text = selectedCity?.name
         cell.valueLabel.text = String(format: "%f", selectedCity?.main?.temp ?? "")
+        if let kelvinTemp = selectedCity?.main?.temp {
+            let celsiusTemp = kelvinTemp - 273.15
+            cell.valueLabel.text = String(format: "%.0f", celsiusTemp) + "°"
+        }
+            
         return cell
     }
 }

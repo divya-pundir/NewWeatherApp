@@ -16,6 +16,7 @@ class AddCityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         self.title = "Add a City"
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
@@ -26,7 +27,12 @@ class AddCityViewController: UIViewController {
    
     @IBAction func addCity(_ sender: Any) {
         if let citiName = cityTextField.text {
-            weatherService.fetchWeatherDataFromServer(city: citiName) { (response, error) in
+            weatherService.fetchWeatherDataFromServer(city: citiName) { [weak self](response, error) in
+                if let error = error {
+                    DispatchQueue.main.async {
+                        self?.displayAlert(error)
+                    }
+                }
                 guard let response = response else {
                    return
                 }
@@ -34,11 +40,20 @@ class AddCityViewController: UIViewController {
                 DispatchQueue.main.async {
                     DataRepository.shared.delegate = self
                     DataRepository.shared.addDataToDataStore(response)
-                    
                 }
             }
         }
    }
+    
+    func displayAlert(_ error: Error) {
+        let alert = UIAlertController(title: "Add a city", message: "Please add a valid city", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+        }))
+
+       
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension AddCityViewController: DataRepositoryDelegate {

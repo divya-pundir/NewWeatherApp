@@ -32,6 +32,8 @@
 		5A6DB36D25EE990600F7957E /* WeatherApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6DB36C25EE990600F7957E /* WeatherApiConstants.swift */; };
 		5A6DB36F25EEB6AA00F7957E /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6DB36E25EEB6AA00F7957E /* DetailTableViewCell.swift */; };
 		5A6DB37225EF494400F7957E /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6DB37125EF494400F7957E /* DataRepository.swift */; };
+		5ABEC77325EF862A00E99B60 /* WeatherDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABEC77225EF862A00E99B60 /* WeatherDetailModel.swift */; };
+		5ABEC77525EF8D5400E99B60 /* WeatherForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABEC77425EF8D5400E99B60 /* WeatherForecastCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		5A6DB36C25EE990600F7957E /* WeatherApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiConstants.swift; sourceTree = "<group>"; };
 		5A6DB36E25EEB6AA00F7957E /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		5A6DB37125EF494400F7957E /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
+		5ABEC77225EF862A00E99B60 /* WeatherDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailModel.swift; sourceTree = "<group>"; };
+		5ABEC77425EF8D5400E99B60 /* WeatherForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,7 @@
 			children = (
 				5A6DB33C25EE200200F7957E /* CitiTableViewCell.swift */,
 				5A6DB36E25EEB6AA00F7957E /* DetailTableViewCell.swift */,
+				5ABEC77425EF8D5400E99B60 /* WeatherForecastCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				5A6DB35025EE3F9300F7957E /* Wind.swift */,
 				5A6DB34B25EE3E9E00F7957E /* WeatherData.swift */,
 				5A6DB35D25EE568400F7957E /* DataStore.xcdatamodeld */,
+				5ABEC77225EF862A00E99B60 /* WeatherDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -349,8 +355,10 @@
 				5A6DB31125EE110700F7957E /* AppDelegate.swift in Sources */,
 				5A6DB35425EE3F9400F7957E /* Clouds.swift in Sources */,
 				5A6DB37225EF494400F7957E /* DataRepository.swift in Sources */,
+				5ABEC77525EF8D5400E99B60 /* WeatherForecastCell.swift in Sources */,
 				5A6DB35725EE3F9400F7957E /* Wind.swift in Sources */,
 				5A6DB36325EE95B800F7957E /* Reachability.swift in Sources */,
+				5ABEC77325EF862A00E99B60 /* WeatherDetailModel.swift in Sources */,
 				5A6DB33D25EE200200F7957E /* CitiTableViewCell.swift in Sources */,
 				5A6DB35A25EE3F9400F7957E /* Weather.swift in Sources */,
 				5A6DB34C25EE3E9E00F7957E /* WeatherData.swift in Sources */,
@@ -505,7 +513,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/NewWeatherApp/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -523,7 +531,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/NewWeatherApp/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

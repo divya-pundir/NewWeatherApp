@@ -53,5 +53,9 @@ struct WeatherData : Codable {
         name = try values.decodeIfPresent(String.self, forKey: .name)
         cod = try values.decodeIfPresent(Int.self, forKey: .cod)
     }
+    
+   
+    
+   
 
 }
