@@ -32,16 +32,15 @@ class CitiNameViewController : UIViewController {
     
     func getWeatherData() {
         if !Reachability.isConnectedToNetwork() {
-            self.fetchDataFromDb()
+            citiesList = fetchDataFromDb()
             return
         }
         fetchDataFromServer()
     }
     
-    func fetchDataFromDb() {
+    func fetchDataFromDb() -> [WeatherData] {
+        var weatherDataList : [WeatherData] = []
         do {
-            var weatherDataList : [WeatherData] = []
-            
             let request = NSFetchRequest<NSManagedObject>(entityName: "CityNameModel")
             
             let cities = try context.fetch(request)
@@ -51,13 +50,13 @@ class CitiNameViewController : UIViewController {
                         weatherDataList.append(citi)
                     }
                 }
-                citiesList = weatherDataList
             }
             debugPrint(citiesList)
         }
         catch {
             debugPrint(error.localizedDescription)
         }
+        return weatherDataList
     }
     
     func fetchDataFromServer() {
@@ -96,7 +95,6 @@ class CitiNameViewController : UIViewController {
                             
                         }
                     }
-                    
                 }
             }
         } catch {
