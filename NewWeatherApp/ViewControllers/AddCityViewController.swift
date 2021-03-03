@@ -10,34 +10,44 @@ import UIKit
 import CoreData
 
 class AddCityViewController: UIViewController {
+    
     @IBOutlet weak var cityTextField : UITextField!
     lazy var weatherService = WeatherService()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
    
     @IBAction func addCity(_ sender: Any) {
         if let citiName = cityTextField.text {
-            weatherService.fetchWeatherDataFromServer(city: citiName) { [weak self](response, error) in
-                print(response)
+            weatherService.fetchWeatherDataFromServer(city: citiName) { (response, error) in
                 guard let response = response else {
                    return
                 }
+                
                 DispatchQueue.main.async {
-                     self?.addDataToDataStore(response)
+                    DataRepository.shared.delegate = self
+                    DataRepository.shared.addDataToDataStore(response)
+                    
                 }
             }
         }
    }
+}
+
+extension AddCityViewController: DataRepositoryDelegate {
+    func fetchDataFromDS(_ weatherData: [WeatherData]) {
+        
+    }
     
-    func addDataToDataStore(_ weatherDetail : WeatherData) {
-        let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-               let entity = NSEntityDescription.entity(forEntityName: "CityNameModel", in: managedObjectContext)!
-               let data = NSManagedObject(entity: entity, insertInto: managedObjectContext)
-              
-               if let obj = try? JSONEncoder().encode(weatherDetail)  {
-                   data.setValue(obj, forKey: "weatherData")
-                    try? managedObjectContext.save()
-     }
-              
-        navigationController?.popViewController(animated: true)
+    func dataWriteToDataStore() {
+         navigationController?.popViewController(animated: true)
     }
     
 }

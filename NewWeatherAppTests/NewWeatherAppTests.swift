@@ -18,12 +18,6 @@ class NewWeatherAppTests: XCTestCase {
     
     }
 
-    func fetchDataFromDb() {
-        let nameVc = CitiNameViewController()
-        let cities = nameVc.fetchDataFromDb()
-        XCTAssertNotNil(cities)
-    }
-
     func testPerformanceExample() {
        self.measure {
            
