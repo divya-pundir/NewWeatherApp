@@ -57,7 +57,7 @@
                                 </constraints>
                                 <state key="normal" title="Add City"/>
                                 <connections>
-                                    <segue destination="pPz-Kc-9Fx" kind="presentation" identifier="addCity" id="tSu-TW-zbQ"/>
+                                    <segue destination="pPz-Kc-9Fx" kind="show" identifier="addCity" id="tSu-TW-zbQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -75,6 +75,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="msN-ef-Ell"/>
                     <connections>
+                        <outlet property="citiNameTblView" destination="vey-zW-dtG" id="bMl-x0-fM2"/>
                         <segue destination="dmu-Tg-ySR" kind="show" identifier="weatherDetails" id="DCC-6G-IRO"/>
                     </connections>
                 </viewController>
@@ -87,11 +88,11 @@
             <objects>
                 <viewController id="pPz-Kc-9Fx" customClass="AddCityViewController" customModule="NewWeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fZx-3y-HYr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5v9-Cy-5dw">
-                                <rect key="frame" x="50" y="404" width="314" height="34"/>
+                                <rect key="frame" x="50" y="431" width="314" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Ngc-h4-PSN"/>
                                 </constraints>
@@ -99,7 +100,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWk-h8-6HG">
-                                <rect key="frame" x="0.0" y="734" width="414" height="74"/>
+                                <rect key="frame" x="0.0" y="788" width="414" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="jho-6r-bIG"/>
                                 </constraints>
@@ -149,10 +150,10 @@
             </objects>
             <point key="canvasLocation" x="95.652173913043484" y="61.607142857142854"/>
         </scene>
-        <!--View Controller-->
+        <!--Weather Detail View Controller-->
         <scene sceneID="hDv-Au-ovQ">
             <objects>
-                <viewController id="dmu-Tg-ySR" sceneMemberID="viewController">
+                <viewController id="dmu-Tg-ySR" customClass="WeatherDetailViewController" customModule="NewWeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M8P-ST-lw4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,7 +162,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="116" id="mSH-bg-Ib8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" rowHeight="116" id="mSH-bg-Ib8" customClass="DetailTableViewCell" customModule="NewWeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mSH-bg-Ib8" id="v1N-P3-rMz">
@@ -193,8 +194,16 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="YHA-nj-JYN" secondAttribute="trailing" id="kgP-8P-Kdt"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="eP1-3i-Qle" id="88F-eL-fgF"/>
+                                            <outlet property="valueLabel" destination="CDK-FJ-pdb" id="Mgp-pI-J3y"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="dmu-Tg-ySR" id="BU0-rB-Eq6"/>
+                                    <outlet property="delegate" destination="dmu-Tg-ySR" id="ZRJ-bF-Ioz"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

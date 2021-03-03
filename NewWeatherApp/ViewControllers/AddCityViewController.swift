@@ -29,7 +29,7 @@ class AddCityViewController: UIViewController {
     
     func addDataToDataStore(_ weatherDetail : WeatherData) {
         let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-               let entity = NSEntityDescription.entity(forEntityName: "ModelCiti", in: managedObjectContext)!
+               let entity = NSEntityDescription.entity(forEntityName: "CityNameModel", in: managedObjectContext)!
                let data = NSManagedObject(entity: entity, insertInto: managedObjectContext)
               
                if let obj = try? JSONEncoder().encode(weatherDetail)  {
@@ -37,7 +37,7 @@ class AddCityViewController: UIViewController {
                     try? managedObjectContext.save()
      }
               
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
 }
