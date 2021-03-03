@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vey-zW-dtG">
-                                <rect key="frame" x="0.0" y="88" width="414" height="724"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="citiNameCell" rowHeight="118" id="4av-v2-BNy" customClass="CitiTableViewCell" customModule="NewWeatherApp" customModuleProvider="target">
@@ -51,26 +51,13 @@
                                     <outlet property="delegate" destination="7i4-Op-GFM" id="bbp-ri-cN3"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUk-sQ-Ia1">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="4en-db-DtU"/>
-                                </constraints>
-                                <state key="normal" title="Add City"/>
-                                <connections>
-                                    <segue destination="pPz-Kc-9Fx" kind="show" identifier="addCity" id="tSu-TW-zbQ"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.94901960784313721" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="DUk-sQ-Ia1" firstAttribute="bottom" secondItem="mGu-TE-iUX" secondAttribute="bottom" id="7le-MP-i34"/>
                             <constraint firstItem="mGu-TE-iUX" firstAttribute="trailing" secondItem="vey-zW-dtG" secondAttribute="trailing" id="7sv-Nz-GrL"/>
-                            <constraint firstItem="DUk-sQ-Ia1" firstAttribute="top" secondItem="vey-zW-dtG" secondAttribute="bottom" id="L4F-7L-LNF"/>
-                            <constraint firstItem="mGu-TE-iUX" firstAttribute="trailing" secondItem="DUk-sQ-Ia1" secondAttribute="trailing" id="Zht-UM-oRP"/>
                             <constraint firstItem="vey-zW-dtG" firstAttribute="top" secondItem="mGu-TE-iUX" secondAttribute="top" id="d6v-jP-FKm"/>
                             <constraint firstItem="vey-zW-dtG" firstAttribute="leading" secondItem="mGu-TE-iUX" secondAttribute="leading" id="f6r-QW-2nX"/>
-                            <constraint firstItem="DUk-sQ-Ia1" firstAttribute="leading" secondItem="mGu-TE-iUX" secondAttribute="leading" id="xaR-u4-NVO"/>
+                            <constraint firstItem="mGu-TE-iUX" firstAttribute="bottom" secondItem="vey-zW-dtG" secondAttribute="bottom" id="jUs-0o-6dE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mGu-TE-iUX"/>
                     </view>
@@ -78,6 +65,7 @@
                     <connections>
                         <outlet property="citiNameTblView" destination="vey-zW-dtG" id="bMl-x0-fM2"/>
                         <segue destination="dmu-Tg-ySR" kind="show" identifier="weatherDetails" id="DCC-6G-IRO"/>
+                        <segue destination="pPz-Kc-9Fx" kind="show" identifier="addDetail" id="wV1-Vm-Ubq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCd-rN-GWn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -105,14 +93,14 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="jho-6r-bIG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Add"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="33"/>
+                                <state key="normal" title="ADD"/>
                                 <connections>
                                     <action selector="addCity:" destination="pPz-Kc-9Fx" eventType="touchUpInside" id="Cbq-cK-JjM"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.94901960784313721" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="DWk-h8-6HG" firstAttribute="leading" secondItem="QMA-Lx-Nad" secondAttribute="leading" id="OfT-70-O0W"/>
                             <constraint firstItem="5v9-Cy-5dw" firstAttribute="centerX" secondItem="fZx-3y-HYr" secondAttribute="centerX" id="XZE-jL-riG"/>
@@ -259,7 +247,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.94901960784313721" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hEb-ad-m7p" firstAttribute="bottom" secondItem="e2j-DX-vbI" secondAttribute="bottom" id="4Xr-WL-PKf"/>
                             <constraint firstItem="e2j-DX-vbI" firstAttribute="leading" secondItem="hEb-ad-m7p" secondAttribute="leading" id="P39-HH-jWd"/>

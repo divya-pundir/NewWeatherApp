@@ -23,6 +23,7 @@ class CitiNameViewController : UIViewController {
         self.title = "Select a City"
         citiNameTblView.delegate = self
         citiNameTblView.dataSource = self
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Add", style: .done, target: self, action: #selector(self.action(sender:)))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,10 +33,15 @@ class CitiNameViewController : UIViewController {
         self.citiNameTblView.reloadData()
     }
     
+    @objc func action(sender: UIBarButtonItem) {
+       performSegue(withIdentifier: "addDetail", sender: nil)
+    }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let detailViewController = segue.destination as? WeatherDetailViewController, let city = selectedCity {
-            detailViewController.selectedCity = city
+        if segue.identifier  == "weatherDetails" {
+            if let detailViewController = segue.destination as? WeatherDetailViewController, let city = selectedCity {
+                detailViewController.selectedCity = city
+            }
         }
     }
 }
